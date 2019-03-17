@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demoWeb3" />
+        <module name="webApp2" />
       </profile>
     </annotationProcessing>
   </component>
