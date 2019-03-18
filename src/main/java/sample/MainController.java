@@ -22,6 +22,16 @@ public class MainController {
     @Autowired
     MessageService svc;
 
+    @Autowired
+    CurrentUserBean ub;
+
+    @ModelAttribute(name="user") // без name не заработает, выберет имя сам
+    public String getUser() {
+        return ub.getUsername();
+    }
+
+
+
 //    @RequestMapping("/")
 //    @ResponseBody
 
@@ -38,17 +48,25 @@ public class MainController {
         m.addAttribute("messages", svc.getAllMessages());
         return  "messages";
     }
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String start() {
+        return "index";
+    }
+
+    @RequestMapping(value = "index", method = RequestMethod.GET)
     public String index() {
         return "index";
     }
+
+
 
     @RequestMapping(value="/add.do")
     public String newMessage(Model m) {
         m.addAttribute("messages", svc.getAllMessages());
         return  "newMessage";
     }
+
+
     @RequestMapping(value="/addMessage.do", method= RequestMethod.POST)
     //public String addNewMessage(Model m) {
     //public String addNewMessage(Model m,@RequestParam Map<String, String> requestParams) {
@@ -68,14 +86,11 @@ public class MainController {
         }
         m.addAttribute("messages", svc.getAllMessages());
         //return "/add.do";
-        return  "messages";
+        return  "redirect:allmsg";
         //m.addAttribute("messages", svc.getAllMessages());
         //return  "redirect:http://ya.ru";
     }
 
-    @RequestMapping("/t")
-    public String test2() {
-        return "redirect:http://ya.ru";
-    }
+
 
 }

@@ -25,11 +25,15 @@
         //String login = (String) request.getSession().getAttribute("username");
         %>
 
-        <h2>Добро пожаловать <c:if test="${username!=null}"> <font color="#4b0082">${username}   </font> <a href="logout.jsp">(выйти)</a> </c:if> !!!!!</h2>
+        <h2>Добро пожаловать <c:if test="${user!=null}"> <font color="#4b0082">${user}   </font> <a href="logout.do">(выйти)</a> </c:if> !!!!!</h2>
+
+
+        <jsp:include page="/login" />
+
 
 
         <br/> <br/>
-        <c:if test="${username==null}">
+        <c:if test="${user==null}">
         <a href="add.do"><font size="+3" color="#008b8b"> Начать чат анонимно </font> </a>
         </c:if>
 

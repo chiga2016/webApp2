@@ -22,11 +22,11 @@
        // pw.println(login);
     %>
 
-    <h1>Добро пожаловать  <font color="#4b0082">${username}</font> !!!!!</h1>
+    <h1>Добро пожаловать  <font color="#4b0082">${user}</font> !!!!!</h1>
 
-    <div style="margin-right: 10px"><h2>Пользователь <c:if test="${username!=null}"> <font
-            color="#4b0082">${username}</font> <a href="logout.jsp">(выйти)</a></c:if> <c:if test="${username==null}">
-        <font color="#4b0082">Аноним</font> <a href="index.jsp">(войти)</a> </c:if> !!!!!</h2></div>
+    <div style="margin-right: 10px"><h2>Пользователь <c:if test="${user!=null}"> <font
+            color="#4b0082">${user}</font> <a href="logout.do">(выйти)</a></c:if> <c:if test="${user==null}">
+        <font color="#4b0082">Аноним</font> <a href="index">(войти)</a> </c:if> !!!!!</h2></div>
     <br>
     <form action="/view.do" method="post" style="float:left; margin-right: 10px">
         <input type="submit" title="Показать сообщения" name="viewMessages" value="Показать сообщения"></input>
@@ -41,7 +41,7 @@
 
         <form action="addMessage.do" method="POST" accept-charset="UTF-8">
         Ваше имя:<br/>
-        <input name="user" <c:if test="${username!=null}"> value=${username}</c:if>  /><br/>
+        <input name="user" <c:if test="${user!=null}"> value=${user}</c:if>  /><br/>
         Кому:<br/>
         <input name="user2" <c:if test="${param.author!=null}"> value=${param.author}</c:if> /><br/>
         Ваше сообщение:<br/>
