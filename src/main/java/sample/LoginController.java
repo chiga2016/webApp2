@@ -32,8 +32,14 @@ public class LoginController {
     @RequestMapping(value="login.do",method=RequestMethod.POST)
     //public String login( @RequestParam(required=true) String u, @RequestParam(required=true) String p  ) {
     public String login(@RequestParam(value="login") String u,@RequestParam(value="pass") String p){
-        ub.login(u,p);
-        return  "redirect:add.do";
+        String result;
+        if(ub.login(u,p)){
+            result=  "redirect:add.do";
+        }
+        else{
+            result=  "redirect:errorLogin";
+        }
+        return  result;
     }
 
     @RequestMapping(value="logout.do")

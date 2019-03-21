@@ -48,6 +48,7 @@ public class MainController {
         m.addAttribute("messages", svc.getAllMessages());
         return  "messages";
     }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String start() {
         return "index";
@@ -58,13 +59,40 @@ public class MainController {
         return "index";
     }
 
-
+    @RequestMapping(value = "errorLogin", method = RequestMethod.GET)
+    public String error() {
+        return "errorLogin";
+    }
 
     @RequestMapping(value="/add.do")
     public String newMessage(Model m) {
         m.addAttribute("messages", svc.getAllMessages());
         return  "newMessage";
     }
+
+    @RequestMapping(value="/view.do")
+    public String getGlobalMessage(Model m) {
+        m.addAttribute("messages", svc.getGlobalMessages());
+        return  "messages";
+    }
+
+    @RequestMapping(value="/viewPrivate.do")
+    public String getPrivateMessages(Model m) {
+        m.addAttribute("messages", svc.getMessagesTo("admin"));
+        return  "messages";
+    }
+
+    @RequestMapping("/answer/{u}")
+    ModelAndView answer (@PathVariable("u") String targetUser) {  //(@PathVariable("u") targetUser) {
+
+        ModelAndView mv=new ModelAndView("answerMessage");
+        mv.addObject("messages", svc.getAllMessages());
+        mv.addObject("author", targetUser);
+        return mv;
+
+        // показываем addMessage.jsp или её специализированный аналог с заполненными полями "от кого" и "кому"
+    }
+
 
 
     @RequestMapping(value="/addMessage.do", method= RequestMethod.POST)
@@ -86,7 +114,7 @@ public class MainController {
         }
         m.addAttribute("messages", svc.getAllMessages());
         //return "/add.do";
-        return  "redirect:allmsg";
+        return  "redirect:add.do";
         //m.addAttribute("messages", svc.getAllMessages());
         //return  "redirect:http://ya.ru";
     }

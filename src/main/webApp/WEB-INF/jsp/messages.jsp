@@ -18,10 +18,13 @@
 <%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--<jsp:include page="addMessage.jsp" />--%>
+<%--<jsp:include page="/add.do" />--%>
 
 <ul>
     <c:forEach var="m" items="${messages}" >
-        <li><font color = green><c:out value="${m.date}"></c:out></font> : From  <a href="add.do?author=${m.author}"><font color = blue><c:out value="${m.author}"></c:out> </font></a> To <font color = purple><c:out value="${m.recepient}"></c:out></font> : <font color = #4b0082  size="3" face="Arial" ><c:out value="${m.text}"></c:out></font>   </li>
+        <li><font color = green><c:out value="${m.date}"></c:out></font> : From  <a href="answer/${m.author}"><font color = blue><c:out value="${m.author}"></c:out> </font></a> To <font color = purple><c:out value="${m.recepient}"></c:out></font> : <font color = #4b0082  size="3" face="Arial" ><c:out value="${m.text}"></c:out></font>   </li>
+        <!--/// ***************** -->
+
     </c:forEach>
 </ul>
 
