@@ -8,7 +8,6 @@ public class CurrentUserBean {
     public void setUsername(String username) {
         this.username = username;
     }
-
     String username;
 
     boolean login(String u, String password) {

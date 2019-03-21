@@ -16,6 +16,7 @@ public class MessageService {
         addMessage("guest2", "Hello!");
     }
 
+
     public final void addMessage(String from,String user2, String text ) {
         messages.add(new Message(from, user2, text));
     }

@@ -6,10 +6,8 @@ import java.util.Date;
 import static java.util.Locale.ENGLISH;
 
 public class Message {
-    
     private final String author;
     private final String recepient; // null -> сообщение для всех
-    
     private final String text;
     private final Date date;
 

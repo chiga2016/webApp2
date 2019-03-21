@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <title>Title</title>
 </head>
 <body>
 --------------------------------------------------------------------
+
 <%@ page pageEncoding="UTF-8" %>
 <form action="login.do" method="POST" title="Форма авторизации пользователя">
     <input type="text" placeholder="имя" name="login" />
@@ -22,3 +24,6 @@
 --------------------------------------------------------------------
 </body>
 </html>
+
+
+
