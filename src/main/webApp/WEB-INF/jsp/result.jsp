@@ -20,7 +20,6 @@
     <tr>
         <td>ID</td>
         <td>${msg}</td>
-
     </tr>
 </table>
 </body>

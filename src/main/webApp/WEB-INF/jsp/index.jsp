@@ -26,7 +26,6 @@
         %>
         <h2>Добро пожаловать <c:if test="${user!=null}"> <font color="#4b0082">${user}   </font> <a href="logout.do">(выйти)</a> </c:if> !!!!!</h2>
 
-
         <br/> <br/>
         <c:if test="${user==null}">
             <jsp:include page="/login" />

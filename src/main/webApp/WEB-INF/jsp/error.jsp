@@ -1,19 +1,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: BalagutdinovIF
-  Date: 28.02.2019
-  Time: 12:10
+  Date: 22.03.2019
+  Time: 18:08
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Logout</title>
+    <title>Title</title>
 </head>
 <body>
-<%
-request.getSession().setAttribute("username", null);
-response.sendRedirect("index.jsp");
-%>
+<h1>${msg}</h1>
+<a href="javascript:history.back()">Назад</a>
+
 </body>
 </html>

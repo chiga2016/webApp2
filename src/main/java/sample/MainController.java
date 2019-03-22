@@ -9,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.security.auth.login.LoginException;
 import java.util.Map;
 
 @Controller
@@ -63,7 +64,10 @@ public class MainController {
     }
 
     @RequestMapping(value="/add.do")
-    public String newMessage(Model m) {
+    public String newMessage(Model m) throws Login1Exception {
+        if (getUser()==null){
+            throw new Login1Exception("Can not login");
+        }
         m.addAttribute("messages", svc.getAllMessages());
         return  "newMessage";
     }
@@ -76,7 +80,7 @@ public class MainController {
 
     @RequestMapping(value="/viewPrivate.do")
     public String getPrivateMessages(Model m) {
-        m.addAttribute("messages", svc.getMessagesTo("admin"));
+        m.addAttribute("messages", svc.getMessagesTo(ub.getUsername()));
         return  "messages";
     }
 
@@ -116,6 +120,15 @@ public class MainController {
         //m.addAttribute("messages", svc.getAllMessages());
         //return  "redirect:http://ya.ru";
     }
+
+    @ExceptionHandler(Login1Exception.class)
+    public ModelAndView exceptionHandler(Login1Exception ex)
+    {
+        ModelAndView mv=new ModelAndView("error");
+        mv.addObject("msg", ex.getMessage());
+        return mv;
+    }
+
 
 
 
