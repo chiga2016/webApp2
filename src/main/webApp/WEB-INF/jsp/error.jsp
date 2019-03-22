@@ -13,6 +13,5 @@
 <body>
 <h1>${msg}</h1>
 <a href="javascript:history.back()">Назад</a>
-
 </body>
 </html>

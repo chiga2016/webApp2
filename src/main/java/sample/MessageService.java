@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 public class MessageService {
     private final ArrayList<Message> messages;
-
     public MessageService() {
         messages=new ArrayList<>(100);
         addMessage("admin", "Добро пожаловать!");

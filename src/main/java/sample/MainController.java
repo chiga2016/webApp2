@@ -101,11 +101,6 @@ public class MainController {
     //public String addNewMessage(Model m) {
     //public String addNewMessage(Model m,@RequestParam Map<String, String> requestParams) {
     public String addNewMessage(Model m,@RequestParam(value="user") String user1, @RequestParam(value="user2") String user2, @RequestParam(value="msg") String text) {
-      //  Message message = new Message(user1,user2,text);
-//String user1 = requestParams.get("user");
-//String user2 = requestParams.get("user2");
-//String text = requestParams.get("msg");
-        //req.setCharacterEncoding("utf-8");
         if (user1!=""&&text!=""&&user1!=null&&text!=null){
             if(user2!=""){
                 svc.addMessage(user1,user2,text);
@@ -117,8 +112,6 @@ public class MainController {
         m.addAttribute("messages", svc.getAllMessages());
         //return "/add.do";
         return  "redirect:add.do";
-        //m.addAttribute("messages", svc.getAllMessages());
-        //return  "redirect:http://ya.ru";
     }
 
     @ExceptionHandler(Login1Exception.class)

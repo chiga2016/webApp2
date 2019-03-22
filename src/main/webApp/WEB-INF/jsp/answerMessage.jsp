@@ -33,7 +33,6 @@
 <form action="view.do" method="post" style="float:left; margin-right: 10px">
     <input type="submit" title="Показать сообщения" name="viewMessages" value="Показать сообщения"></input>
 </form>
-
 <form action="viewPrivate.do" method="post" style="float:left; margin-right: 10px">
     <input type="submit" title="Показать личные сообщения" name="viewPrivateMessages" value="Показать личные сообщения"></input>
 </form>

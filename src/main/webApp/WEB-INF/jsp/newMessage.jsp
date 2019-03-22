@@ -36,7 +36,6 @@
         <input type="submit" title="Показать личные сообщения" name="viewPrivateMessages" value="Показать личные сообщения"></input>
     </form>
     <br>
-
         <h3>Добавить сообщение</h3>
 
         <form action="addMessage.do" method="POST" accept-charset="UTF-8">

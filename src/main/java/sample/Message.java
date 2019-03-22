@@ -54,7 +54,6 @@ public class Message {
         //SimpleDateFormat newDateFormat = new SimpleDateFormat("MMM dd, yyyy", ENGLISH);
         //String result = newDateFormat.format(date);
         //new SimpleDateFormat("MMM dd, yyyy", ENGLISH).format(date);
-
         return "<font color = green>" +dateTxt+"</font>: From <font color = blue>"+author+"</font> to <font color = purple>"+recepient+"</font>: ---"+text+"---";
     }
 

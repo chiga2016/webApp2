@@ -22,17 +22,16 @@
 	 font-size: medium;
 	 margin-top: 10%;" >
         <%
+
         //String login = (String) request.getSession().getAttribute("username");
         %>
         <h2>Добро пожаловать <c:if test="${user!=null}"> <font color="#4b0082">${user}   </font> <a href="logout.do">(выйти)</a> </c:if> !!!!!</h2>
-
         <br/> <br/>
         <c:if test="${user==null}">
             <jsp:include page="/login" />
             <br/>
         <a href="add.do"><font size="+3" color="#008b8b"> Начать чат анонимно </font> </a>
         </c:if>
-
         <c:if test="${user!=null}">
             <br/>
             <a href="add.do"><font size="+3" color="#008b8b"> Начать чат </font> </a>
