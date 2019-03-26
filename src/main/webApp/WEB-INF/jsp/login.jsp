@@ -16,8 +16,8 @@
 <%@ page pageEncoding="UTF-8" %>
 <form action="login.do" method="POST" title="Форма авторизации пользователя">
 
-    <input type="text" placeholder="имя" name="login" />
-    <input type="password" placeholder="пароль" name="pass"/>
+    <input type="text" placeholder="имя" name="login" value="admin" />
+    <input type="password" placeholder="пароль" name="pass" value="a"/>
     <input type="submit" value="Вход"/>
 
 </form>

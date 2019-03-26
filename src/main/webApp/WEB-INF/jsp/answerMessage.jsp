@@ -8,6 +8,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="action" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -50,7 +54,11 @@
 <div class="new_message">
     <h3>Ответить на сообщение пользователю ${author}</h3>
 
-    <form action="http://localhost:8090/webApp2_war_exploded/addMessage.do" method="POST" accept-charset="UTF-8">
+    <% //<form action="http://localhost:8090/webApp2_war_exploded/addMessage.do" method="POST" accept-charset="UTF-8"> %>
+
+    <c:url var="post_url"  value="/addMessage.do" />
+
+    <form action="${post_url}" method="POST" accept-charset="UTF-8">
         Ваше имя:<br/>
         <input name="user" <c:if test="${user!=null}"> value=${user}</c:if>  /><br/>
         Кому:<br/>

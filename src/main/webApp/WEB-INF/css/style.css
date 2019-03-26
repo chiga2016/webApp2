@@ -51,6 +51,12 @@
 .mes_messages{float:right; margin-right:10%; overflow:auto}
 .new_message{float:left}
 
+.form-submit-button{height:48px; background-color:#0CC; color:#FFF; border-color:#0CC; padding:0px; margin-top: -8px; margin-right:10px; font-size:16px; width: 250px; font-style:inherit; border: 1px solid #eee;
+	}
+	
+.form-submit-button:hover {height:48px; background-color:#03F; color:#FFF; border-color:#0CC; padding:0px; margin-top: -8px; margin-right:10px; font-size:16px; width: 250px; font-style:inherit; border: 1px solid #eee;
+	}
+
 /*
 .form-submit-button {
 background: #B9DFFF;

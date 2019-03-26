@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ugatu2</groupId>
-    <artifactId>demoWeb3</artifactId>
+    <artifactId>webApp2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
