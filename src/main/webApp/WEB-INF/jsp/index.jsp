@@ -1,43 +1,45 @@
 <%--suppress XmlPathReference --%>
 <%--
-    Document   : index
+    Document   : index<a href="../css/style.css">../css/style.css</a>
     Created on : 06.12.2010, 23:24:53
     Author     : Alexei
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+    		<%@include file="../css/style.css"   %>
+		</style>
         <title>Чат</title>
+
     </head>
     <body>
-    <div style="
-    margin: 0;padding: 0;
-    margin-left: 40%;
-     margin-right: 30%;
-	 font-size: medium;
-	 margin-top: 10%;" >
+    <div class="div_index">
         <%
-
         //String login = (String) request.getSession().getAttribute("username");
         %>
-        <h2>Добро пожаловать <c:if test="${user!=null}"> <font color="#4b0082">${user}   </font> <a href="logout.do">(выйти)</a> </c:if> !!!!!</h2>
+        <h2>Добро пожаловать  <c:if test="${user!=null}"> <span class="user"> ${user}</span> <a href="logout.do">(выйти)</a> </c:if> !!!!!</h2>
         <br/> <br/>
         <c:if test="${user==null}">
             <jsp:include page="/login" />
             <br/>
-        <a href="add.do"><font size="+3" color="#008b8b"> Начать чат анонимно </font> </a>
-        </c:if>
-        <c:if test="${user!=null}">
-            <br/>
-            <a href="add.do"><font size="+3" color="#008b8b"> Начать чат </font> </a>
         </c:if>
 
-    </div>>
+      <c:if test="${user==null}"><a href="add.do"><span class="begin_chat"> Начать чат анонимно </span></a></c:if>
+
+      <c:if test="${user==null}"> </c:if>
+        <c:if test="${user!=null}">
+            <br/>
+            <a href="add.do"><span class="begin_chat"> Начать чат </span> </a>
+        </c:if>
+
+</div>
 
         </body>
 </html>

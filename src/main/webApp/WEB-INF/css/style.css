@@ -1,0 +1,73 @@
+@charset "utf-8";
+@import url("*.css");
+/* CSS Document */
+.div_index {
+	margin: 0;padding: 0;
+	width:500px;
+	height:300px;
+    margin-left: 40%;
+     margin-right: 30%;
+	 font-size: medium;
+	 margin-top: 10%;
+	 display:block-inline;
+	}
+	
+	
+	
+	.header-panel{background-color:#0CC;
+	height:50px;
+	width:100%;
+	overflow:visible}
+		.home_class{color:#FFF ; font-size:24px; float:left; margin: 5px; padding: 5px}
+		.home_class a {color:#FFF}
+		
+		.buttons{float:left; margin:5px; padding:5px; margin-left: 20%}
+		.user{color:#FFF;font-size:24px; float:right; margin:5px; padding:5px;}
+		.user a {color:#FFF}
+	
+	.mes_div{
+	margin: 0;padding: 0;
+    margin-left: 40%;
+    margin-right: 30%;
+		}
+	
+.begin_chat{
+	font-size:24px;
+	color:#008b8b
+}
+	
+
+.bottom_form {
+	float:left; margin-right: 10px;
+}
+.mes_date{color:#309}
+
+.mes_author{color:#009; font-weight:bold}
+
+.mes_recipient{color:#033; font-weight:bold}
+
+.mes_text{color:#003; font-size:16px; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif}
+
+.mes_messages{float:right; margin-right:10%; overflow:auto}
+.new_message{float:left}
+
+/*
+.form-submit-button {
+background: #B9DFFF;
+color: #000;
+border: 1px solid #eee;
+border-radius: 10px;
+box-shadow: 5px 5px 5px #eee;
+text-shadow:none;
+}
+
+.form-submit-button:hover {
+
+background: #016ABC;
+color: #000;
+border: 1px solid #eee;
+border-radius: 10px;
+box-shadow: 5px 5px 5px #eee;
+text-shadow:none;
+}
+*/

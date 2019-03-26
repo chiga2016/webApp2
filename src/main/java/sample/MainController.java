@@ -70,6 +70,7 @@ public class MainController {
         }
         m.addAttribute("messages", svc.getAllMessages());
         return  "newMessage";
+        //return "messages";
     }
 
     @RequestMapping(value="/view.do")
@@ -111,7 +112,8 @@ public class MainController {
         }
         m.addAttribute("messages", svc.getAllMessages());
         //return "/add.do";
-        return  "redirect:add.do";
+        //return  "redirect:add.do";
+        return "messages";
     }
 
     @ExceptionHandler(Login1Exception.class)
